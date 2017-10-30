@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm -v *.dat *.in *.list *.pdb *.swp *.tra1 *.txt CA rmsinp || true
+rm -v *.dat *.in *.list *.pdb *.tra1 *.txt CA rmsinp || true
