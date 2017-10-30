@@ -29,10 +29,16 @@ for name in names:
     total_pose += 1
 
 with open('tra.in', 'wt') as f:
-    f.write("%d\n" % total_pose)
+    f.write("%d %d %d\n" % (total_pose, -1, 1))
     for name in pose_names:
         f.write("%s\n" % name)
 
 with open('rmsinp', 'wt') as f:
     f.write("%d %d\n" % (1, plen))
     f.write("%d\n" % (plen))
+
+
+pose = pyrosetta.pose_from_pdb(names[0])
+with open('seq.dat', 'wt') as f:
+    for n in range(pose.total_residue()):
+        f.write("%4d %3s\n" % (n + 1, pose.residue(i + 1).name3()))
